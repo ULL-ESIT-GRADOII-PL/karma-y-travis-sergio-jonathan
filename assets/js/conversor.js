@@ -19,8 +19,8 @@
     this.toCelsius = function() {
       var result;
       var tipo = this.getType().toLowerCase();
-      if("fahrenheit".match(tipo))
-        result = (this.getValue() - 32) * 5/9;
+      if ("fahrenheit".match(tipo))
+        result = (this.getValue() - 32) * 5 / 9;
       else
         result = this.getValue();
       return result;
@@ -28,8 +28,8 @@
     this.toFahrenheit = function() {
       var result;
       var tipo = this.getType().toLowerCase();
-      if("celsius".match(tipo))
-        result = (this.getValue() * 9/5) + 32;
+      if ("celsius".match(tipo))
+        result = (this.getValue() * 9 / 5) + 32;
       else
         result = this.getValue();
       return result;
@@ -60,13 +60,16 @@
   exports.convertir = function() {
     var valor = document.getElementById('convert').value,
       elemento = document.getElementById('converted'),
-      /* Extienda la RegeExp a la especificación. use una XRegExp */
-      regexp = /^\s*([-+]?\d+(?:\.\d+)?(?:e[+-]?\d+)?)\s*([a-z,A-Z]+)\s*$/i,
-      valor = valor.match(regexp);
+      regexp = XRegExp(
+        '(?<numero>     [+-]?[0-9]+         # Entero \n' +
+        '(?<decimal>    (\.[0-9])?)         # Decimal \n' +
+        '(?<exponente>  (e[+-]?[0-9]+)?)) + # Exponente \n' +
+        '(?<tipo>       [a-z]+)             # Tipo', 'xi'),
+      valor = XRegExp.exec(valor, regexp);
 
     if (valor) {
-      var numero = valor[1],
-        tipo = valor[2].toLowerCase();
+      var numero = valor.numero,
+        tipo = valor.tipo.toLowerCase();
 
       numero = parseFloat(numero);
       console.log("Valor: " + numero + ", Tipo: " + tipo);
