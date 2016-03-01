@@ -8,16 +8,29 @@
     this.getValue = function() {
       return value;
     };
+    this.getType = function() {
+      return type;
+    }
   }
 
   function Temperatura(valor, tipo) {
     Medida.call(this, valor, tipo);
 
     this.toCelsius = function() {
-      return this.getValue();
-    }
+      var result;
+      if("fahrenheit".match(this.getType()))
+        result = (this.getValue() - 32) * 5/9;
+      else
+        result = this.getValue();
+      return result;
+    };
     this.toFahrenheit = function() {
-      return this.getValue();
+      var result;
+      if("celsius".match(this.getType()))
+        result = (this.getValue() * 9/5) + 32;
+      else
+        result = this.getValue();
+      return result;
     }
   }
 
@@ -56,7 +69,7 @@
       numero = parseFloat(numero);
       console.log("Valor: " + numero + ", Tipo: " + tipo);
 
-      switch (tipo) {
+      switch (tipo[0]) {
         case 'c':
           var celsius = new Celsius(numero);
           elemento.innerHTML = celsius.toFahrenheit().toFixed(2) + " Fahrenheit";
