@@ -18,7 +18,8 @@
 
     this.toCelsius = function() {
       var result;
-      if("fahrenheit".match(this.getType()))
+      var tipo = this.getType().toLowerCase();
+      if("fahrenheit".match(tipo))
         result = (this.getValue() - 32) * 5/9;
       else
         result = this.getValue();
@@ -26,7 +27,8 @@
     };
     this.toFahrenheit = function() {
       var result;
-      if("celsius".match(this.getType()))
+      var tipo = this.getType().toLowerCase();
+      if("celsius".match(tipo))
         result = (this.getValue() * 9/5) + 32;
       else
         result = this.getValue();
