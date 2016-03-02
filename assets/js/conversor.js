@@ -9,16 +9,17 @@
         '(?<numero>    ^[ ]*[+-]?[0-9]+[ ]*        # Entero \n\
          (?<decimal>    (.[0-9])?)[ ]*             # Decimal \n\
          (?<exponente>  (e[+-]?[ ]*[0-9]+)?)[ ]*)  # Exponente \n\
-         (?<tipo>       [a-z]+[ ]*$)               # Tipo', 'xi'),
+         (?<tipo>       [a-z]+)[ ]+(?:to[ ]+)?     # Tipo \n\
+         (?<nuevo_tipo> [a-z]+)[ ]*$               # Nuevo tipo', 'xi'),
       valor = XRegExp.exec(valor, regexp);
 
     if (valor) {
       var numero = valor.numero.replace(/\s+/g, ''),
-        tipo = valor.tipo.toLowerCase();
+        tipo = valor.tipo.toLowerCase(),
+        nuevo_tipo = valor.nuevo_tipo.toLowerCase();
 
-
-      if (tipos_aceptados.indexOf(tipo) > -1) {
-        console.log("Valor: " + numero + ", Tipo: " + tipo);
+      if (tipos_aceptados.indexOf(tipo) > -1 && tipos_aceptados.indexOf(nuevo_tipo) > -1) {
+        console.log("Valor: " + numero + ", Tipo: " + tipo + ", Nuevo: " + nuevo_tipo);
         numero = parseFloat(numero);
         switch (tipo) {
           case 'c':
