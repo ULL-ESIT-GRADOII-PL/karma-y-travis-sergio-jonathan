@@ -21,6 +21,8 @@
       var tipo = this.getType().toLowerCase();
       if ("fahrenheit".match(tipo))
         result = (this.getValue() - 32) * 5 / 9;
+      if ("kelvin".match(tipo))
+        result = this.getValue() - 273.15;
       else
         result = this.getValue();
       return result;
@@ -30,6 +32,19 @@
       var tipo = this.getType().toLowerCase();
       if ("celsius".match(tipo))
         result = (this.getValue() * 9 / 5) + 32;
+      if ("kelvin".match(tipo))
+        result = (this.getValue() * 9 / 5) - 459.67;
+      else
+        result = this.getValue();
+      return result;
+    };
+    this.toKelvin = function() {
+      var result;
+      var tipo = this.getType().toLowerCase();
+      if ("celsius".match(tipo))
+        result = this.getValue() + 273.15;
+      if ("fahrenheit".match(tipo))
+        result = (this.getValue() + 459.67) * 5 / 9;
       else
         result = this.getValue();
       return result;
@@ -53,8 +68,16 @@
   Fahrenheit.prototype = new Temperatura();
   Fahrenheit.prototype.constructor = Fahrenheit;
 
+  function Kelvin(valor) {
+    Temperatura.call(this, valor, "Kelvin");
+  }
+
+  Kelvin.prototype = new Temperatura();
+  Kelvin.prototype.constructor = Kelvin;
+
   exports.Temperatura = Temperatura;
   exports.Celsius = Celsius;
   exports.Fahrenheit = Fahrenheit;
+  exports.Kelvin = Kelvin;
 
 })(this);
