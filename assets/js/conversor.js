@@ -4,10 +4,10 @@
   exports.convertir = function() {
     var valor = document.getElementById('convert').value,
       elemento = document.getElementById('converted'),
-      tipos_aceptados = ["c", "f", "k"],
+      tipos_aceptados = ["c", "f", "k", "m", "in"],
       regexp = XRegExp(
         '(?<numero>    ^[ ]*[+-]?[0-9]+[ ]*        # Entero \n\
-         (?<decimal>    (.[0-9])?)[ ]*             # Decimal \n\
+         (?<decimal>    (.[0-9]+)?)[ ]*            # Decimal \n\
          (?<exponente>  (e[+-]?[ ]*[0-9]+)?)[ ]*)  # Exponente \n\
          (?<tipo>       [a-z]+)[ ]+(?:to[ ]+)?     # Tipo \n\
          (?<nuevo_tipo> [a-z]+)[ ]*$               # Nuevo tipo', 'xi'),
@@ -19,6 +19,7 @@
         nuevo_tipo = valor.nuevo_tipo.toLowerCase();
 
       if (tipos_aceptados.indexOf(tipo) > -1 && tipos_aceptados.indexOf(nuevo_tipo) > -1) {
+        elemento.style.color = "rgb(115, 231, 179)";
         console.log("Valor: " + numero + ", Tipo: " + tipo + ", Nuevo: " + nuevo_tipo);
         numero = parseFloat(numero);
         var inicial;
@@ -31,6 +32,12 @@
             break;
           case 'k':
             inicial = new Kelvin(numero);
+            break;
+          case 'm':
+            inicial = new Metres(numero);
+            break;
+          case 'in':
+            inicial = new Inches(numero);
             break;
           default:
             console.log("No hay asignado un case para este valor");
@@ -47,16 +54,22 @@
           case 'k':
             elemento.innerHTML = inicial.toKelvin().toFixed(2) + " Kelvin";
             break;
+          case 'm':
+            elemento.innerHTML = inicial.toMetres().toFixed(2) + " metres";
+            break;
+          case 'in':
+            elemento.innerHTML = inicial.toInches().toFixed(2) + " inches";
+            break;
           default:
             console.log("No hay asignado un case para este valor");
             break;
         }
       } else {
-        elemento.style.color = "darkred";
-        elemento.innerHTML = "ERROR. Introduzca una medida válida: <br>&emsp;Temperatura: K, F o C <br>&emsp;Distancia: m o in";
+        elemento.style.color = "rgb(242, 92, 39)";
+        elemento.innerHTML = "ERROR. Introduzca una medida y conversión válida: <br>&emsp;Temperatura: K, F o C <br>&emsp;Distancia: m o in";
       }
     } else {
-      elemento.style.color = "darkred";
+      elemento.style.color = "rgb(242, 92, 39)";
       elemento.innerHTML = "ERROR. Introduzca una conversión válida, por ejemplo: 32.5e10 F to K";
     }
   }
