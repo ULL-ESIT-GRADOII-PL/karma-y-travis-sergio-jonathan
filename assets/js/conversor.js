@@ -61,14 +61,16 @@
     var valor = document.getElementById('convert').value,
       elemento = document.getElementById('converted'),
       regexp = XRegExp(
-        '(?<numero>     [+-]?[0-9]+         # Entero \n' +
-        '(?<decimal>    (\.[0-9])?)         # Decimal \n' +
-        '(?<exponente>  (e[+-]?[0-9]+)?)) + # Exponente \n' +
-        '(?<tipo>       [a-z]+)             # Tipo', 'xi'),
+        '(?<numero>    ^[ ]*[+-]?[0-9]+[ ]*       # Entero \n\
+        (?<decimal>    (.[0-9])?)[ ]*             # Decimal \n\
+        (?<exponente>  (e[+-]?[ ]*[0-9]+)?)[ ]*)  # Exponente \n\
+        (?<tipo>       [a-z]+[ ]*$)               # Tipo', 'xi'),
       valor = XRegExp.exec(valor, regexp);
 
+
+
     if (valor) {
-      var numero = valor.numero,
+      var numero = valor.numero.replace(/\s+/g, ''),
         tipo = valor.tipo.toLowerCase();
 
       numero = parseFloat(numero);
@@ -87,8 +89,10 @@
         default:
           /* rellene este código */
       }
-    } else
-      elemento.innerHTML = "";
+    } else {
+      elemento.style.color = "darkred";
+      elemento.innerHTML = "ERROR. Introduzca una temperatura valida, por ejemplo: 32.5e10 F";
+    }
   }
 
 })(this);
