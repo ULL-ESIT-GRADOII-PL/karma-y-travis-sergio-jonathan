@@ -1,59 +1,58 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
+
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Conversor de Medidas</title>
 
-  <meta charset="utf-8">
-  <title>Conversor</title>
-  <meta name="description" content="Conversor de medidas">
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/global.css">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="assets/css/normalize.css">
-  <link rel="stylesheet" href="assets/css/skeleton.css">
-  <link rel="stylesheet" href="assets/css/custom.css">
-
-  <!-- JS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- JS -->
+  <script src="http://xregexp.com/v/3.1.0/xregexp-all.js"></script>
+  <script type="text/javascript" src="assets/js/herencia.js"></script>
   <script type="text/javascript" src="assets/js/conversor.js"></script>
-  
-  <!-- FAVICON
-  -------------------------------------------------- -->
+
+  <!-- FAVICON -->
   <link rel="icon" type="image/png" href="assets/images/favicon.ico">
 
 </head>
-<body>
 
-  <div class="container app">
-    <h4>Conversor</h4>
-    <div class="row">
-      <div class="one-half column">
-        <p>Este conversor te permite hacer conversiones de Temperaturas (Celsius y Farenheit) Ejemplo: 23C para Celsius.</p>
-        <label>Introduzca un valor</label>
-        <input id="convert" class="u-full-width" type="text" autofocus oninput="convertir();" placeholder="Introduzca un valor">
-        <span id="converted"></span>
-      </div>
+<body>
+  <header>
+    <div id=menu>
+      <h1>Conversor de temperatura</h1>
+      <nav>
+        <ul>
+          <li><a href="http://alu0100699968.github.io/" target="_blank"><i class="fa fa-user"></i> Sergio Rodríguez</a></li>
+          <li><a href="http://alu0100696455.github.io/" target="_blank"><i class="fa fa-user"></i> Jonathan Expósito</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <div class="separador"></div>
+
+  <div class="pagina">
+    <p>Este conversor te permite hacer conversiones de temperaturas y unidades de distancia.</p>
+    <p>Por ejemplo, "32C to K" para convertir de Celsius a Kelvin.</p>
+    <input id="convert" autofocus oninput="convertir();" placeholder="Introduzca un valor" />
+    <div class="separador"></div>
+    <div id="converted"></div>
   </div>
-  
+
   <footer>
-      <div class="container">
-        <div class="row">
-          <div class="one-half column">
-            <a href="">Repositorio del código</a>
-          </div>
-          <div class="one-half column">
-            <a href="">Web del autor</a>
-          </div>
-        </div>
-      </div>
+    <p>Enlaces de interés:</p>
+    <ul id=listamenu>
+      <li><a href="https://github.com/alu0100699968/object-oriented-programming-in-js-sergio_-_jonathan/" target="_blank">Repositorio de la práctica</a></li>
+      <li><a href="https://github.com/alu0100699968" target="_blank">GitHub Sergio Rodríguez</a></li>
+      <li><a href="https://github.com/alu0100696455" target="_blank">GitHub Jonathan Expósito</a></li>
+    </ul>
   </footer>
 </body>
+
 </html>
