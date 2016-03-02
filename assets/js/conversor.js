@@ -21,29 +21,43 @@
       if (tipos_aceptados.indexOf(tipo) > -1 && tipos_aceptados.indexOf(nuevo_tipo) > -1) {
         console.log("Valor: " + numero + ", Tipo: " + tipo + ", Nuevo: " + nuevo_tipo);
         numero = parseFloat(numero);
+        var inicial;
         switch (tipo) {
           case 'c':
-            var celsius = new Celsius(numero);
-            elemento.innerHTML = celsius.toFahrenheit().toFixed(2) + " Fahrenheit";
+            inicial = new Celsius(numero);
             break;
           case 'f':
-            var fahrenheit = new Fahrenheit(numero);
-            elemento.innerHTML = fahrenheit.toCelsius().toFixed(2) + " Celsius";
+            inicial = new Fahrenheit(numero);
             break;
           case 'k':
-            var kelvin = new Kelvin(numero);
-            elemento.innerHTML = kelvin.toCelsius().toFixed(2) + " Celsius";
+            inicial = new Kelvin(numero);
             break;
           default:
             console.log("No hay asignado un case para este valor");
+            break;
+        }
+
+        switch (nuevo_tipo) {
+          case 'c':
+            elemento.innerHTML = inicial.toCelsius().toFixed(2) + " Celsius";
+            break;
+          case 'f':
+            elemento.innerHTML = inicial.toFahrenheit().toFixed(2) + " Fahrenheit";
+            break;
+          case 'k':
+            elemento.innerHTML = inicial.toKelvin().toFixed(2) + " Kelvin";
+            break;
+          default:
+            console.log("No hay asignado un case para este valor");
+            break;
         }
       } else {
         elemento.style.color = "darkred";
-        elemento.innerHTML = "ERROR. Introduzca un tipo valido, por ejemplo: F o C";
+        elemento.innerHTML = "ERROR. Introduzca una medida válida: <br>&emsp;Temperatura: K, F o C <br>&emsp;Distancia: m o in";
       }
     } else {
       elemento.style.color = "darkred";
-      elemento.innerHTML = "ERROR. Introduzca una temperatura valida, por ejemplo: 32.5e10 F";
+      elemento.innerHTML = "ERROR. Introduzca una conversión válida, por ejemplo: 32.5e10 F to K";
     }
   }
 
