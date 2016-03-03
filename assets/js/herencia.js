@@ -3,7 +3,11 @@
 
   function Medida(valor, tipo) {
     var value = valor;
-    var type = tipo || "indefinido";
+    var type = tipo;
+    if (!tipo && valor) {
+      var match = valor.match(/[a-z]+$/i);
+      type = match[0];
+    }
 
     this.getValue = function() {
       return value;
@@ -12,6 +16,8 @@
       return type;
     };
   }
+
+  exports.Medida = Medida;
 
   function Distancia(valor, tipo) {
     Medida.call(this, valor, tipo);
