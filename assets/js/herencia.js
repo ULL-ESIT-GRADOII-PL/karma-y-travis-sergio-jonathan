@@ -10,7 +10,7 @@
     };
     this.getType = function() {
       return type;
-    }
+    };
   }
 
   function Distancia(valor, tipo) {
@@ -24,7 +24,7 @@
       else
         result = this.getValue();
       return result;
-    }
+    };
     this.toMetres = function() {
       var result;
       var tipo = this.getType().toLowerCase();
@@ -33,7 +33,7 @@
       else
         result = this.getValue();
       return result;
-    }
+    };
   }
 
   function Metres(valor) {
@@ -89,7 +89,7 @@
       else
         result = this.getValue();
       return result;
-    }
+    };
   }
 
   Temperatura.prototype = new Medida();
