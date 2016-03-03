@@ -10,8 +10,8 @@
          (?<decimal>    (.[0-9]+)?)[ ]*            # Decimal \n\
          (?<exponente>  (e[+-]?[ ]*[0-9]+)?)[ ]*)  # Exponente \n\
          (?<tipo>       [a-z]+)[ ]+(?:to[ ]+)?     # Tipo \n\
-         (?<nuevo_tipo> [a-z]+)[ ]*$               # Nuevo tipo', 'xi'),
-      valor = XRegExp.exec(valor, regexp);
+         (?<nuevo_tipo> [a-z]+)[ ]*$               # Nuevo tipo', 'xi');
+    valor = XRegExp.exec(valor, regexp);
 
     if (valor) {
       var numero = valor.numero.replace(/\s+/g, ''),
@@ -72,6 +72,6 @@
       elemento.style.color = "rgb(242, 92, 39)";
       elemento.innerHTML = "ERROR. Introduzca una conversión válida, por ejemplo: 32.5e10 F to K";
     }
-  }
+  };
 
 })(this);
