@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat|Raleway:400,700);
+body {
+  /*Se establece un gradiente de fondo y un color fijo para los navegadores que no lo soporten*/
+  background: #232526;
+  background: -webkit-linear-gradient(right, #232526, #414345);
+  background: linear-gradient(to left, #232526, #414345);
+  /*Se fija el color y la fuente por defecto de la página*/
+  color: white;
+  font-family: Raleway, sans-serif;
+}
+header {
+  /*Se establece una imagen de fondo para la cabecera*/
+  background: url("../images/header.jpg") no-repeat center;
+  /*Se alinea el texto a la izquierda y se especifican las dimensiones de la cabecera*/
+  text-align: left;
+  width: 100%;
+  height: 85px;
+}
+
+/*Se establece el color y la separación de los enlaces del menú de la cabecera. También se elimina el subrayado*/
+
+header a {
+  color: white;
+  text-decoration: none;
+  padding-right: 5%;
+}
+
+/*Al pasar el ratón por los enlaces de la cabecera cambiarán a color negro*/
+
+header a:hover {
+  color: black;
+}
+#menu {
+  /*El menú se separa ligeramente del borde la página*/
+  margin-left: 2%;
+}
+
+/*Se cambia el tipo de representación a inline-block para que ambos elementos se muestren adyacentes*/
+
+#menu > h1, nav {
+  display: inline-block;
+}
+
+/*Añadido tamaño al menú de navegación para evitar errores con Firefox*/
+#menu > nav {
+  width: 380px;
+}
+
+/*Se elimina el estilo típico de una lista para que se muestre horizontalmente y sin puntos*/
+
+nav > ul > li, nav > ul {
+  list-style-type: none;
+  display: inline;
+}
+
+.separador {
+  height: 50px;
+}
+
+.pagina {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.output {
+  color: red;
+  font-weight: bold;
+  font-size: large;
+}
+
+/* Calculated values in bold */
+
+input {
+  width: 50%;
+  border: none;
+  border-radius: 20px 20px 20px 20px;
+  padding: 5px 5px;
+  font-size: large;
+  color: black;
+}
+
+#converted {
+  width: 50%;
+  margin: auto;
+  text-align: left;
+}
+
+/*Se establece el tamaño del pie de página y el formato de su texto*/
+
+footer {
+  width: 100%;
+  text-align: left;
+  text-indent: 2%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/*Se eliminan los "puntos" de la lista*/
+
+footer ul {
+  list-style-type: none;
+}
+footer a {
+  color: white;
+  font-style: italic;
+}
+footer a:hover {
+  color: rgb(200, 205, 205);
+}
+
+@media screen and (max-width:860px) {
+  #menu h1 {
+    font-size: x-large;
+  }
+}
+@media screen and (max-width:525px) {
+  header li {
+    font-size: small;
+  }
+  #menu h1 {
+    font-size: large;
+  }
+  input {
+    width: 250px;
+  }
+
+  #converted {
+    width: 250px;
+  }
+}
