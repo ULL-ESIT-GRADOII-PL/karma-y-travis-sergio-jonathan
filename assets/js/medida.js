@@ -16,15 +16,21 @@
       return type;
     };
   }
+
+  Medida.REGEXP = XRegExp(
+    '(?<numero>    ^[ ]*[+-]?[0-9]+[ ]*        # Entero \n\
+     (?<decimal>    (.[0-9]+)?)[ ]*            # Decimal \n\
+     (?<exponente>  (e[+-]?[ ]*[0-9]+)?)[ ]*)  # Exponente \n\
+     (?<tipo>       [a-z]+)[ ]+(?:to[ ]+)?     # Tipo \n\
+     (?<nuevo_tipo> [a-z]+)[ ]*$               # Nuevo tipo', 'xi');
+
+  Medida.match = function(valor) {
+    return XRegExp.exec(valor, Medida.REGEXP);
+  }
+
   Medida.convertir = function(valor, elemento) {
-    var tipos_aceptados = ["c", "f", "k", "m", "in"],
-      regexp = XRegExp(
-        '(?<numero>    ^[ ]*[+-]?[0-9]+[ ]*        # Entero \n\
-         (?<decimal>    (.[0-9]+)?)[ ]*            # Decimal \n\
-         (?<exponente>  (e[+-]?[ ]*[0-9]+)?)[ ]*)  # Exponente \n\
-         (?<tipo>       [a-z]+)[ ]+(?:to[ ]+)?     # Tipo \n\
-         (?<nuevo_tipo> [a-z]+)[ ]*$               # Nuevo tipo', 'xi');
-    valor = XRegExp.exec(valor, regexp);
+    var tipos_aceptados = ["c", "f", "k", "m", "in"];
+    valor = Medida.match(valor);
     if (valor) {
       var numero = valor.numero.replace(/\s+/g, ''),
         tipo = valor.tipo.toLowerCase(),
