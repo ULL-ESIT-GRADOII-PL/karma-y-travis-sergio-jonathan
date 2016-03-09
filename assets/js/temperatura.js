@@ -1,5 +1,6 @@
 (function(exports) {
   "use strict;"
+
   function Temperatura(valor, tipo) {
     Medida.call(this, valor, tipo);
 
@@ -12,7 +13,7 @@
         result = this.getValue() - 273.15;
       else
         result = this.getValue();
-      return result;
+      return new Celsius(result);
     };
     this.toFahrenheit = function() {
       var result;
@@ -23,7 +24,7 @@
         result = (this.getValue() * 9 / 5) - 459.67;
       else
         result = this.getValue();
-      return result;
+      return new Fahrenheit(result);
     };
     this.toKelvin = function() {
       var result;
@@ -34,7 +35,7 @@
         result = (this.getValue() + 459.67) * 5 / 9;
       else
         result = this.getValue();
-      return result;
+      return new Kelvin(result);
     };
   }
 
@@ -66,4 +67,5 @@
   exports.Celsius = Celsius;
   exports.Fahrenheit = Fahrenheit;
   exports.Kelvin = Kelvin;
+
 })(this);

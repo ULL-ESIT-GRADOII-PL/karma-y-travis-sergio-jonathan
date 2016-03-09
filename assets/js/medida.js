@@ -15,9 +15,10 @@
     this.getType = function() {
       return type;
     };
+    this.toString = function() {
+      return value.toFixed(2) + " " + type;
+    }
   }
-
-
 
   Medida.REGEXP = XRegExp(
     '(?<numero>    ^[ ]*[+-]?[0-9]+[ ]*        # Entero \n\
@@ -30,26 +31,30 @@
     return XRegExp.exec(valor, Medida.REGEXP);
   }
 
-  Medida.convertir = function(valor, elemento) {
-    var measures = {
+  Medida.measures = function() {
+    return {
       'c': Celsius,
       'f': Fahrenheit,
       'k': Kelvin,
       'm': Metres,
       'in': Inches
     };
-    var tipos_aceptados = ["c", "f", "k", "m", "in"];
+  }
+
+  Medida.convertir = function(valor, elemento) {
+    var measures = Medida.measures();
+
     valor = Medida.match(valor);
     if (valor) {
-      var numero = valor.numero.replace(/\s+/g, ''),
+      var numero = parseFloat(valor.numero.replace(/\s+/g, '')),
         tipo = valor.tipo.toLowerCase(),
         nuevo_tipo = valor.nuevo_tipo.toLowerCase();
-      numero = parseFloat(numero);
+
       try {
         elemento.style.color = "rgb(115, 231, 179)";
         var inicial = new measures[tipo](numero);
         var destino = "to" + measures[nuevo_tipo].name;
-        return inicial[destino]().toFixed(2) + " " + measures[nuevo_tipo].name;
+        return inicial[destino](); // inicial[destino]().toFixed(2) + " " + measures[nuevo_tipo].name;
       } catch (err) {
         elemento.style.color = "rgb(242, 92, 39)";
         return 'ERROR. Introduzca una medida y conversión válida. Desconozco como convertir desde "' + tipo + '" hasta "' + nuevo_tipo + '"';

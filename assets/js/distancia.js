@@ -1,5 +1,6 @@
 (function(exports) {
   "use strict;"
+
   function Distancia(valor, tipo) {
     Medida.call(this, valor, tipo);
 
@@ -10,7 +11,7 @@
         result = this.getValue() * 39.37;
       else
         result = this.getValue();
-      return result;
+      return new Inches(result);
     };
     this.toMetres = function() {
       var result;
@@ -19,7 +20,7 @@
         result = this.getValue() / 39.37;
       else
         result = this.getValue();
-      return result;
+      return new Metres(result);
     };
   }
 
