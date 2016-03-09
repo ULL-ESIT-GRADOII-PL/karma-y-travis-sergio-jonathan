@@ -17,6 +17,8 @@
     };
   }
 
+
+
   Medida.REGEXP = XRegExp(
     '(?<numero>    ^[ ]*[+-]?[0-9]+[ ]*        # Entero \n\
      (?<decimal>    (.[0-9]+)?)[ ]*            # Decimal \n\
@@ -29,57 +31,28 @@
   }
 
   Medida.convertir = function(valor, elemento) {
+    var measures = {
+      'c': Celsius,
+      'f': Fahrenheit,
+      'k': Kelvin,
+      'm': Metres,
+      'in': Inches
+    };
     var tipos_aceptados = ["c", "f", "k", "m", "in"];
     valor = Medida.match(valor);
     if (valor) {
       var numero = valor.numero.replace(/\s+/g, ''),
         tipo = valor.tipo.toLowerCase(),
         nuevo_tipo = valor.nuevo_tipo.toLowerCase();
-
-      if (tipos_aceptados.indexOf(tipo) > -1 && tipos_aceptados.indexOf(nuevo_tipo) > -1) {
+      numero = parseFloat(numero);
+      try {
         elemento.style.color = "rgb(115, 231, 179)";
-        console.log("Valor: " + numero + ", Tipo: " + tipo + ", Nuevo: " + nuevo_tipo);
-        numero = parseFloat(numero);
-        var inicial;
-        switch (tipo) {
-          case 'c':
-            inicial = new Celsius(numero);
-            break;
-          case 'f':
-            inicial = new Fahrenheit(numero);
-            break;
-          case 'k':
-            inicial = new Kelvin(numero);
-            break;
-          case 'm':
-            inicial = new Metres(numero);
-            break;
-          case 'in':
-            inicial = new Inches(numero);
-            break;
-          default:
-            console.log("No hay asignado un case para este valor");
-            break;
-        }
-
-        switch (nuevo_tipo) {
-          case 'c':
-            return inicial.toCelsius().toFixed(2) + " Celsius";
-          case 'f':
-            return inicial.toFahrenheit().toFixed(2) + " Fahrenheit";
-          case 'k':
-            return inicial.toKelvin().toFixed(2) + " Kelvin";
-          case 'm':
-            return inicial.toMetres().toFixed(2) + " metres";
-          case 'in':
-            return inicial.toInches().toFixed(2) + " inches";
-          default:
-            console.log("No hay asignado un case para este valor");
-            break;
-        }
-      } else {
+        var inicial = new measures[tipo](numero);
+        var destino = "to" + measures[nuevo_tipo].name;
+        return inicial[destino]().toFixed(2) + " " + measures[nuevo_tipo].name;
+      } catch (err) {
         elemento.style.color = "rgb(242, 92, 39)";
-        return "ERROR. Introduzca una medida y conversión válida: <br>&emsp;Temperatura: K, F o C <br>&emsp;Distancia: m o in";
+        return 'ERROR. Introduzca una medida y conversión válida. Desconozco como convertir desde "' + tipo + '" hasta "' + nuevo_tipo + '"';
       }
     } else {
       elemento.style.color = "rgb(242, 92, 39)";

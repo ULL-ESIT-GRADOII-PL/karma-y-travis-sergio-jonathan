@@ -1,4 +1,5 @@
 (function(exports) {
+  "use strict;"
   function Distancia(valor, tipo) {
     Medida.call(this, valor, tipo);
 
