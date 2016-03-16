@@ -2,12 +2,11 @@
   "use strict";
 
   function Medida(valor, tipo) {
-    var value = valor;
+    var value = parseFloat(valor);
     var type = tipo;
     if (!tipo && valor) {
       var match = valor.match(/[a-z]+$/i);
       type = match[0];
-      value = parseFloat(value);
     }
 
     this.getValue = function() {

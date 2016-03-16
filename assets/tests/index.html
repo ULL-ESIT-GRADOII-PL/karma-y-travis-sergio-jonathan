@@ -14,19 +14,20 @@
 
 <body>
   <div id="mocha">
-    <p><a href=".">Index</a></p>
+    <p><a href="/index.html">Index</a></p>
   </div>
   <div id="messages"></div>
   <div id="fixtures"></div>
   <script src="mocha.js"></script>
   <script src="chai.js"></script>
   <!--<script src="blanket.js" data-cover-adapter="mocha-blanket.js" data-cover-flags="debug"></script>-->
-  <script src="../js/medida.js" data-cover></script>
+  <!--<script src="../js/medida.js" data-cover></script>-->
   <script>
     mocha.setup('bdd')
   </script>
 
   <script type="text/javascript" src="medida-test.js"></script>
+  <script type="text/javascript" src="temperatura-test.js"></script>
   <script>
     mocha.run();
   </script>
