@@ -3,7 +3,9 @@
 body {
   margin:0;
 }
-
+a {
+  color:black;
+}
 #mocha {
   font: 20px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 60px 50px;
@@ -261,7 +263,7 @@ body {
 #mocha-stats .progress {
   float: right;
   padding-top: 0;
-  
+
   /**
    * Set safe initial values, so mochas .progress does not inherit these
    * properties from Bootstrap .progress (which causes .progress height to
