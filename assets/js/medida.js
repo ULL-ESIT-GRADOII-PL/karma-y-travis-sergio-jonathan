@@ -7,6 +7,7 @@
     if (!tipo && valor) {
       var match = valor.match(/[a-z]+$/i);
       type = match[0];
+      value = parseFloat(value);
     }
 
     this.getValue = function() {
@@ -23,7 +24,7 @@
   Medida.REGEXP = XRegExp(
     '(?<numero>    ^[ ]*[+-]?[0-9]+[ ]*        # Entero \n\
      (?<decimal>    (.[0-9]+)?)[ ]*            # Decimal \n\
-     (?<exponente>  (e[+-]?[ ]*[0-9]+)?)[ ]*)  # Exponente \n\
+     (?<exponente>  (e[+-]?[ ]*[0-9]+)?))[ ]*  # Exponente \n\
      (?<tipo>       [a-z]+)[ ]+(?:to[ ]+)?     # Tipo \n\
      (?<nuevo_tipo> [a-z]+)[ ]*$               # Nuevo tipo', 'xi');
 
