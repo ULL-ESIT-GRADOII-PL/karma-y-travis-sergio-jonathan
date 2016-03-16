@@ -1,25 +1,31 @@
 {
-  "name": "Conversor",
+  "name": "conversor_medidas",
   "version": "0.0.1",
   "description": "Conversor javascript de tipos",
-  "main": "conversor.js",
+  "main": "assets/js/conversor.js",
   "scripts": {
     "test": "mocha test",
-    "chai": "curl https://raw.githubusercontent.com/chaijs/chai/master/chai.js -o test/chai.js"
+    "chai": "curl https://raw.githubusercontent.com/chaijs/chai/master/chai.js -o tests/chai.js",
+    "mocha": "curl https://raw.githubusercontent.com/mochajs/mocha/master/mocha.js -o tests/mocha.js && curl https://raw.githubusercontent.com/mochajs/mocha/master/mocha.css -o tests/mocha.css"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aluXXXXXXX/STW03.git"
+    "url": "git+https://github.com/ULL-ESIT-GRADOII-PL/mocha-y-chai-sergio-jonathan.git"
   },
   "keywords": [
     "conversor"
   ],
-  "author": "",
+  "author": "Sergio Rodríguez y Jonathan Expósito",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aluXXXXXXX/STW03/issues"
+    "url": "https://github.com/ULL-ESIT-GRADOII-PL/mocha-y-chai-sergio-jonathan/issues"
   },
-  "homepage": "https://github.com/aluXXXXXXX/STW03",
+  "homepage": "https://github.com/ULL-ESIT-GRADOII-PL/mocha-y-chai-sergio-jonathan",
   "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "directories": {
+    "test": "tests"
   }
 }
