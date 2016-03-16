@@ -6,10 +6,6 @@
   <title>Tests Conversor</title>
   <link rel="stylesheet" media="all" href="mocha.css">
   <script src="http://xregexp.com/v/3.1.0/xregexp-all.js"></script>
-  <script type="text/javascript" src="../js/medida.js"></script>
-  <script type="text/javascript" src="../js/temperatura.js"></script>
-  <script type="text/javascript" src="../js/distancia.js"></script>
-  <script type="text/javascript" src="../js/conversor.js"></script>
 </head>
 
 <body>
@@ -20,8 +16,10 @@
   <div id="fixtures"></div>
   <script src="mocha.js"></script>
   <script src="chai.js"></script>
-  <!--<script src="blanket.js" data-cover-adapter="mocha-blanket.js" data-cover-flags="debug"></script>-->
-  <!--<script src="../js/medida.js" data-cover></script>-->
+  <script src="blanket.min.js" data-cover-adapter="mocha-blanket.js" data-cover-flags="debug"></script>
+  <script src="../js/medida.js" data-cover></script>
+  <script src="../js/temperatura.js" data-cover></script>
+  <script src="../js/distancia.js" data-cover></script>
   <script>
     mocha.setup('bdd')
   </script>
