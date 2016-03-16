@@ -10,7 +10,7 @@ describe("Temperatura", function() {
     });
 
     it("Debería aceptar un valor y un tipo en un mismo parámetro", function() {
-      var temperatura = new Medida("32c");
+      var temperatura = new Temperatura("32c");
       expect(temperatura.getValue()).to.equal(32);
       expect(temperatura.getType()).to.equal('c');
     });
