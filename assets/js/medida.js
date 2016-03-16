@@ -2,7 +2,7 @@
   "use strict";
 
   function Medida(valor, tipo) {
-    var value = valor;
+    var value = parseFloat(valor);
     var type = tipo;
     if (!tipo && valor) {
       var match = valor.match(/[a-z]+$/i);
@@ -23,7 +23,7 @@
   Medida.REGEXP = XRegExp(
     '(?<numero>    ^[ ]*[+-]?[0-9]+[ ]*        # Entero \n\
      (?<decimal>    (.[0-9]+)?)[ ]*            # Decimal \n\
-     (?<exponente>  (e[+-]?[ ]*[0-9]+)?)[ ]*)  # Exponente \n\
+     (?<exponente>  (e[+-]?[ ]*[0-9]+)?))[ ]*  # Exponente \n\
      (?<tipo>       [a-z]+)[ ]+(?:to[ ]+)?     # Tipo \n\
      (?<nuevo_tipo> [a-z]+)[ ]*$               # Nuevo tipo', 'xi');
 

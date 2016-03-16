@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tests Conversor</title>
+  <link rel="stylesheet" media="all" href="mocha.css">
+  <script src="http://xregexp.com/v/3.1.0/xregexp-all.js"></script>
+</head>
+
+<body>
+  <div id="mocha">
+    <p><a href="/mocha-y-chai-sergio-jonathan/index.html">Página del Proyecto</a></p>
+  </div>
+  <div id="messages"></div>
+  <div id="fixtures"></div>
+  <script src="mocha.js"></script>
+  <script src="chai.js"></script>
+  <script src="blanket.min.js" data-cover-adapter="mocha-blanket.js" data-cover-flags="debug"></script>
+  <script src="../js/medida.min.js" data-cover></script>
+  <script src="../js/temperatura.min.js" data-cover></script>
+  <script src="../js/distancia.min.js" data-cover></script>
+  <script>
+    mocha.setup('bdd')
+  </script>
+
+  <script type="text/javascript" src="medida-test.js"></script>
+  <script type="text/javascript" src="temperatura-test.js"></script>
+  <script type="text/javascript" src="distancia-test.js"></script>
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>
