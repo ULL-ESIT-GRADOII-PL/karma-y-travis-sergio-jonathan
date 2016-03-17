@@ -13,6 +13,7 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 ### Campus Virtual
 
 * [Procesadores de Lenguajes](https://campusvirtual.ull.es/1516/course/view.php?id=178)
+* [Descripción de la práctica (Gitbooks)](https://casianorodriguezleon.gitbooks.io/pl1516/content/mochachaisinon.html)
 
 ### Autores
 
