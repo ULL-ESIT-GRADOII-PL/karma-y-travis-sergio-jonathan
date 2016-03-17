@@ -6,8 +6,9 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 ### Despliegue en github.io
 
-* [Página web del proyecto](http://ull-esit-gradoii-pl.github.io/object-oriented-programming-in-js-sergio_-_jonathan/)
-* [Repositorio en el que trabajamos](https://github.com/alu0100699968/object-oriented-programming-in-js-sergio_-_jonathan/)
+* [Página web del proyecto](http://ull-esit-gradoii-pl.github.io/mocha-y-chai-sergio-jonathan/)
+* [Repositorio en el que trabajamos](https://github.com/alu0100696455/mocha-y-chai-sergio-jonathan/)
+* [Enlace a los tests del proyecto](http://ull-esit-gradoii-pl.github.io/mocha-y-chai-sergio-jonathan/assets/tests/)
 
 ### Campus Virtual
 
@@ -15,5 +16,5 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 ### Autores
 
-* [Jonathan Expósito Martín](alu0100696455.github.io)
-* [Sergio Rodríguez Martín](alu0100699968.github.io)
+* [Jonathan Expósito Martín](https://alu0100696455.github.io)
+* [Sergio Rodríguez Martín](https://alu0100699968.github.io)
