@@ -6,14 +6,14 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 ### Despliegue en github.io
 
-* [Página web del proyecto](http://ull-esit-gradoii-pl.github.io/mocha-y-chai-sergio-jonathan/)
-* [Repositorio en el que trabajamos](https://github.com/alu0100696455/mocha-y-chai-sergio-jonathan/)
-* [Enlace a los tests del proyecto](http://ull-esit-gradoii-pl.github.io/mocha-y-chai-sergio-jonathan/assets/tests/)
+* [Página web del proyecto](http://ull-esit-gradoii-pl.github.io/karma-y-travis-sergio-jonathan/)
+* [Repositorio en el que trabajamos](https://github.com/alu0100699968/karma-y-travis-sergio-jonathan/)
+* [Enlace a los tests del proyecto](http://ull-esit-gradoii-pl.github.io/karma-y-travis-sergio-jonathan/assets/tests/)
 
 ### Campus Virtual
 
 * [Procesadores de Lenguajes](https://campusvirtual.ull.es/1516/course/view.php?id=178)
-* [Descripción de la práctica (Gitbooks)](https://casianorodriguezleon.gitbooks.io/pl1516/content/mochachaisinon.html)
+* [Descripción de la práctica (Gitbooks)](https://casianorodriguezleon.gitbooks.io/pl1516/content/travis.html)
 
 ### Autores
 
