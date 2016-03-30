@@ -1,6 +1,6 @@
 # ULL ESIT Grado de Ingeniería Informática
 
-## Práctica: Conversor en JavaScript de medidas utilizando OOP
+## Práctica: Conversor en JavaScript de medidas utilizando OOP [![Build Status](https://travis-ci.org/alu0100699968/karma-y-travis-sergio-jonathan.svg?branch=master)](https://travis-ci.org/alu0100699968/karma-y-travis-sergio-jonathan)
 
 Este repositorio aloja la práctica de conversión de tipos, realizada con html, css y javascript, usando POO y haciendo uso de la herencia en javascript.
 
