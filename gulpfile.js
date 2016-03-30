@@ -4,7 +4,9 @@ var gulp = require('gulp'),
   del = require('del'),
   minifyHTML = require('gulp-minify-html'),
   minifyCSS = require('gulp-minify-css'),
-  karma = require('karma').server;
+  karma = require('karma').server,
+  gulp = require('gulp'),
+  ghPages = require('gulp-gh-pages');
 
 
 gulp.task('minify', function() {
@@ -41,6 +43,11 @@ gulp.task('tests', function(done) {
     configFile: __dirname + '/karma.conf.js',
     singleRun: true
   }, done);
+});
+
+gulp.task('deploy', function() {
+  return gulp.src('./minified/**/*')
+    .pipe(ghPages());
 });
 
 gulp.task('default', ['tests']);
