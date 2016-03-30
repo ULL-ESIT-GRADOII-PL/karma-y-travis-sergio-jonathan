@@ -1,0 +1,27 @@
+.output,input{font-size:large}
+footer ul,nav>ul,nav>ul>li{list-style-type:none}
+@font-face{font-family:Montserrat;font-style:normal;font-weight:400;src:local('Montserrat-Regular'),url(https://fonts.gstatic.com/s/montserrat/v6/zhcz-_WihjSQC0oHJ9TCYC3USBnSvpkopQaUR-2r7iU.ttf) format('truetype')}
+@font-face{font-family:Raleway;font-style:normal;font-weight:400;src:local('Raleway'),local('Raleway-Regular'),url(https://fonts.gstatic.com/s/raleway/v10/bIcY3_3JNqUVRAQQRNVteQ.ttf) format('truetype')}
+@font-face{font-family:Raleway;font-style:normal;font-weight:700;src:local('Raleway Bold'),local('Raleway-Bold'),url(https://fonts.gstatic.com/s/raleway/v10/JbtMzqLaYbbbCL9X6EvaIy3USBnSvpkopQaUR-2r7iU.ttf) format('truetype')}
+body{background:#232526;background:-webkit-linear-gradient(right,#232526,#414345);background:linear-gradient(to left,#232526,#414345);color:#fff;font-family:Raleway,sans-serif}
+header{background:url(../images/header.jpg) center no-repeat;text-align:left;width:100%;height:85px}
+header a{color:#fff;text-decoration:none;padding-right:5%}
+header a:hover{color:#000}
+#menu{margin-left:2%}
+#menu>h1,nav{display:inline-block}
+#menu>nav{width:380px}
+nav>ul,nav>ul>li{display:inline}
+.separador{height:50px}
+.pagina{width:90%;margin:auto;text-align:center}
+.output{color:red;font-weight:700}
+input{width:50%;border:none;border-radius:20px;padding:5px;color:#000}
+#converted{width:50%;margin:auto;text-align:left}
+footer{width:100%;text-align:left;text-indent:2%;position:absolute;bottom:0;left:0}
+footer a{color:#fff;font-style:italic}
+footer a:hover{color:#c8cdcd}
+@media screen and (max-width:860px){#menu h1{font-size:x-large}
+}
+@media screen and (max-width:525px){header li{font-size:small}
+#menu h1{font-size:large}
+#converted,input{width:250px}
+}
