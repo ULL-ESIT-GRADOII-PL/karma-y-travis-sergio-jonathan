@@ -59,7 +59,7 @@ module.exports = function(config) {
     browsers: ['PhantomJS', 'Firefox', 'Chrome'],
 
     customLaunchers: {
-      Chrome_travis_ci: {
+      chromeTravisCI: {
         base: 'Chrome',
         flags: ['--no-sandbox']
       }
