@@ -8,7 +8,7 @@ Este repositorio aloja la práctica de conversión de tipos, realizada con html,
 
 * [Página web del proyecto](http://ull-esit-gradoii-pl.github.io/karma-y-travis-sergio-jonathan/)
 * [Repositorio en el que trabajamos](https://github.com/alu0100699968/karma-y-travis-sergio-jonathan/)
-* [Enlace a los tests del proyecto](http://ull-esit-gradoii-pl.github.io/karma-y-travis-sergio-jonathan/assets/tests/)
+* [Enlace a los tests del proyecto](http://ull-esit-gradoii-pl.github.io/karma-y-travis-sergio-jonathan/tests/)
 
 ### Campus Virtual
 
