@@ -6,23 +6,37 @@ var gulp = require('gulp'),
   minifyCSS = require('gulp-minify-css'),
   karma = require('karma').server,
   gulp = require('gulp'),
-  ghPages = require('gulp-gh-pages');
+  ghPages = require('gulp-gh-pages'),
+  imagemin = require('gulp-imagemin'),
+  jpegtran = require('imagemin-jpegtran');
 
 
 gulp.task('minify', function() {
   gulp.src(['!assets/js/*.min.js', 'assets/js/*.js'])
-    .pipe(uglify())
+    .pipe(uglify({
+      mangle: false
+    }))
     .pipe(rename(function(path) {
       path.basename += ".min";
     }))
-    .pipe(gulp.dest('minified'));
+    .pipe(gulp.dest('minified/js'));
 
-  gulp.src('index.html')
-    .pipe(minifyHTML())
-    .pipe(rename(function(path) {
-      path.basename += ".min"
+  gulp.src(['!assets/tests/*.min.js', 'assets/tests/*.js'])
+    .pipe(uglify({
+      mangle: false
     }))
+    .pipe(rename(function(path) {
+      path.basename += ".min";
+    }))
+    .pipe(gulp.dest('minified/tests'));
+
+  gulp.src('assets/index.html')
+    .pipe(minifyHTML())
     .pipe(gulp.dest('minified'))
+
+  gulp.src('assets/tests/index.html')
+    .pipe(minifyHTML())
+    .pipe(gulp.dest('minified/tests'))
 
   gulp.src(['!assets/css/*.min.css', 'assets/css/*.css'])
     .pipe(minifyCSS({
@@ -31,7 +45,26 @@ gulp.task('minify', function() {
     .pipe(rename(function(path) {
       path.basename += ".min"
     }))
-    .pipe(gulp.dest('assets/css'))
+    .pipe(gulp.dest('minified/css'))
+
+  gulp.src(['!assets/tests/*.min.css', 'assets/tests/*.css'])
+    .pipe(minifyCSS({
+      keepBreaks: true
+    }))
+    .pipe(rename(function(path) {
+      path.basename += ".min"
+    }))
+    .pipe(gulp.dest('minified/tests'))
+
+  gulp.src('assets/images/*')
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{
+        removeViewBox: false
+      }],
+      use: [jpegtran()]
+    }))
+    .pipe(gulp.dest('minified/images'));
 });
 
 gulp.task('clean', function(cb) {
