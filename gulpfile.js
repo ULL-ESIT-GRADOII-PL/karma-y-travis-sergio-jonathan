@@ -8,7 +8,8 @@ var gulp = require('gulp'),
   gulp = require('gulp'),
   ghPages = require('gulp-gh-pages'),
   imagemin = require('gulp-imagemin'),
-  jpegtran = require('imagemin-jpegtran');
+  jpegtran = require('imagemin-jpegtran'),
+  shell = require('gulp-shell');
 
 
 gulp.task('minify', function() {
@@ -83,4 +84,6 @@ gulp.task('deploy', function() {
     .pipe(ghPages());
 });
 
-gulp.task('default', ['tests']);
+gulp.task('default', shell.task([
+  'gulp clean && gulp minify && gulp deploy'
+]));

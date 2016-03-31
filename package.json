@@ -4,7 +4,7 @@
   "description": "Conversor javascript de tipos",
   "main": "assets/js/conversor.js",
   "scripts": {
-    "test": "gulp",
+    "test": "gulp tests",
     "chai": "curl https://raw.githubusercontent.com/chaijs/chai/master/chai.js -o tests/chai.js",
     "mocha": "curl https://raw.githubusercontent.com/mochajs/mocha/master/mocha.js -o tests/mocha.js && curl https://raw.githubusercontent.com/mochajs/mocha/master/mocha.css -o tests/mocha.css"
   },
@@ -30,6 +30,7 @@
     "gulp-minify-css": "^1.2.4",
     "gulp-minify-html": "^1.0.6",
     "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.5.2",
     "gulp-uglify": "^1.5.3",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^0.2.3",
