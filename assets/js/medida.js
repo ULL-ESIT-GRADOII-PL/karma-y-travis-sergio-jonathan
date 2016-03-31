@@ -31,7 +31,7 @@
     return XRegExp.exec(valor, Medida.REGEXP);
   }
 
-  Medida.measures = function() {
+  Medida.measures = {}/*function() {
     return {
       'c': Celsius,
       'f': Fahrenheit,
@@ -39,10 +39,10 @@
       'm': Metres,
       'in': Inches
     };
-  }
+  }*/
 
   Medida.convertir = function(valor, elemento) {
-    var measures = Medida.measures();
+    var measures = Medida.measures;//();
 
     valor = Medida.match(valor);
     if (valor) {

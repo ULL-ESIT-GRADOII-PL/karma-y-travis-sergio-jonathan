@@ -48,6 +48,7 @@
 
   Celsius.prototype = new Temperatura();
   Celsius.prototype.constructor = Celsius;
+  Medida.measures.c = Celsius;
 
   function Fahrenheit(valor) {
     Temperatura.call(this, valor, "Fahrenheit");
@@ -55,6 +56,8 @@
 
   Fahrenheit.prototype = new Temperatura();
   Fahrenheit.prototype.constructor = Fahrenheit;
+  Medida.measures.f = Fahrenheit;
+
 
   function Kelvin(valor) {
     Temperatura.call(this, valor, "Kelvin");
@@ -62,6 +65,7 @@
 
   Kelvin.prototype = new Temperatura();
   Kelvin.prototype.constructor = Kelvin;
+  Medida.measures.k = Kelvin;
 
   exports.Temperatura = Temperatura;
   exports.Celsius = Celsius;

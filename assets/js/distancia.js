@@ -33,6 +33,7 @@
 
   Metres.prototype = new Distancia();
   Metres.prototype.constructor = Metres;
+  Medida.measures.m = Metres;
 
   function Inches(valor) {
     Distancia.call(this, valor, "inches");
@@ -40,6 +41,7 @@
 
   Inches.prototype = new Distancia();
   Inches.prototype.constructor = Inches;
+  Medida.measures.in = Inches;
 
   exports.Distancia = Distancia;
   exports.Metres = Metres;
