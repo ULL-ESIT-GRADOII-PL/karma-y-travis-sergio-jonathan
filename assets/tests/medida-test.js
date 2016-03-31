@@ -34,7 +34,7 @@ describe("Medida", function() {
 
   describe("Medida#measures()", function() {
     it("Debería devolver una tabla hash con los valores reconocidos por el conversor", function() {
-      var measures = Medida.measures();
+      var measures = Medida.measures;
       expect(measures['f']).to.equal(Fahrenheit);
       expect(measures['c']).to.equal(Celsius);
       expect(measures['k']).to.equal(Kelvin);
